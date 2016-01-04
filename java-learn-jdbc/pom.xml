@@ -7,11 +7,23 @@
     <artifactId>java-learn</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>java-learn-io</artifactId>
-  <name>java-learn-io</name>
+  
+
+  <artifactId>java-learn-jdbc</artifactId>
+  <name>java-learn-jdbc</name>
   <url>http://maven.apache.org</url>
+  
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <mysql.version>5.1.37</mysql.version>
   </properties>
- 
+  <dependencies>
+    <dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.version}</version>
+	</dependency>
+    
+  </dependencies>
 </project>
