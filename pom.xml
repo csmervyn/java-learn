@@ -52,5 +52,6 @@
   	<module>java-learn-inheritance</module>
     <module>java-learn-io</module>
     <module>java-learn-jdbc</module>
+    <module>java-learn-multiThreading</module>
   </modules>
 </project>

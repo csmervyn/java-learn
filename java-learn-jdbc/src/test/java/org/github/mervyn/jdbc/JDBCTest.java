@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
   *
   */
 public class JDBCTest {
-	protected Logger logger = LoggerFactory.getLogger(this.getClass());
+	protected static Logger logger = LoggerFactory.getLogger(JDBCTest.class);
 	
 	/**
 	  * testSelect(测试select)
