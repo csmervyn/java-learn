@@ -53,5 +53,6 @@
     <module>java-learn-io</module>
     <module>java-learn-jdbc</module>
     <module>java-learn-multiThreading</module>
+    <module>java-learn-net</module>
   </modules>
 </project>
