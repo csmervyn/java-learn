@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
   */
 public class MyRunnable implements Runnable {
 	protected static Logger logger = LoggerFactory.getLogger(MyRunnable.class);
-	
+
 	public void run() {
 		String threadName = Thread.currentThread().getName();
 		for(int i = 0; i < 100; i++){
@@ -20,5 +20,6 @@ public class MyRunnable implements Runnable {
 			//System.out.println(threadName + ":" + i);
 		}
 	}
+	
 
 }

@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
   *
   */
 public class MainThreadTest {
-	Logger logger = LoggerFactory.getLogger(this.getClass());
+	protected static Logger logger = LoggerFactory.getLogger(MainThreadTest.class);
 	
 	/**
 	  * testMainThread(测试每个Java程序启动后，虚拟机将自动创建一个主线程)
