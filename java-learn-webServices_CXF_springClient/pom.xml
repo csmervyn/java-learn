@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.github.mervyn</groupId>
+    <artifactId>java-learn</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>org.github.mervyn.webServices_CXF_springClient</groupId>
+  <artifactId>java-learn-webServices_CXF_springClient</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <packaging>war</packaging>
+  <name>java-learn-webServices_CXF_springClient Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<spring.version>4.2.3.RELEASE</spring.version>
+  	<cxf.version>3.1.4</cxf.version>
+  </properties>
+  
+  
+  
+  <dependencies>
+    <!-- B:spring依赖 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${spring.version}</version>
+	</dependency>	
+	<!-- E:spring依赖 -->
+	
+	<!-- B:cxf依赖 -->
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-frontend-jaxws</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http-jetty</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+	<!-- E:cxf依赖 -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+    
+  </dependencies>
+  <build>
+    <finalName>java-learn-webServices_CXF_springClient</finalName>
+    <plugins>
+    	<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.3</version>
+			<configuration>
+				<encoding>utf8</encoding>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+    	</plugin>
+    	
+    	
+    	<plugin>
+		  <groupId>org.eclipse.jetty</groupId>
+		  <artifactId>jetty-maven-plugin</artifactId>
+		  <version>9.0.0.v20130308</version>
+			<configuration>
+				
+				<webApp>
+			      <contextPath>/${jetty.contextPath}</contextPath>
+			    </webApp>
+    			<!-- 热部署时间 -->
+				<scanIntervalSeconds>5</scanIntervalSeconds>
+				<webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
+			</configuration>
+    	</plugin>
+    </plugins>
+  </build>
+</project>

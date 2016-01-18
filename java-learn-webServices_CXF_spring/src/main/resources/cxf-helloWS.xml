@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+   <!-- 
+   <jaxws:endpoint 
+     id="orderProcess" 
+     implementor="demo.order.OrderProcessImpl" 
+     address="/OrderProcess" />
+      -->
+   <!-- 
+   <jaxws:endpoint id="helloWS"
+   				   implementor="org.github.mervyn.webServices_CXF_spring.HelloWSImpl"
+   				   address="/helloWS">
+   </jaxws:endpoint>
+    -->
+    <!-- 接口 -->
+    <!-- 实现类 -->
+   <!--  <jaxws:server id="iHelloWS" serviceClass="org.github.mervyn.webServices_CXF_spring.IHelloWS" address="/helloWS">
+    	
+    	<jaxws:serviceBean>
+    		<bean id="helloWSImpl" class="org.github.mervyn.webServices_CXF_spring.HelloWSImpl"></bean>
+    	</jaxws:serviceBean>
+    </jaxws:server> -->
+    
+    
+    <!-- 使Spring支持自动检测组件，如注解的Repository、Service、Controller -->
+    <context:component-scan base-package="org.github.mervyn.webServices_CXF_spring" />
+    <!-- 测试发布服务 -->
+    <jaxws:endpoint id="helloWSEndPoint"
+    				implementor="org.github.mervyn.webServices_CXF_spring.HelloWSImpl"
+    				address="/helloWS">
+    </jaxws:endpoint>
+    
+     
+</beans>

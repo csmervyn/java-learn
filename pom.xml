@@ -54,5 +54,14 @@
     <module>java-learn-jdbc</module>
     <module>java-learn-multiThreading</module>
     <module>java-learn-net</module>
+    <module>java-learn-webServices</module>
+    <module>java-learn-webServicesClient</module>
+    <module>java-learn-webServices_CXF</module>
+    <module>java-learn-webServices_CXFClient</module>
+    <module>java-learn-webServices_CXF_spring</module>
+    <module>java-learn-webServices_CXF_springClient</module>
+    <module>java-learn-webServices_CXF_springRestful</module>
+    <module>java-learn-webServices_CXF_springRestfulClient</module>
+    <module>java-learn-webSocket</module>
   </modules>
 </project>

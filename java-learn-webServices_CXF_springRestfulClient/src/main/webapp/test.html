@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<script>
+	$(document).ready(function(){
+	  	/*var obj = $.ajax({
+			type:"get",
+			url:"http://localhost:8080/java-learn-webServices_CXF_springRestful/services/HelloWS/5",
+			async:true
+		});
+		alert(obj);
+		 $("#myDiv").html(obj.responseText);
+		*/
+		$.ajax({
+			 type:"GET", 
+	         url:"http://localhost:8080/java-learn-webServices_CXF_springRestful/services/HelloWS/5",
+	         dataType: "json",               
+	         data:{},
+	         async: false, 
+	         success:function(result){
+	         	 
+	         	alert(result.id +"<--->" + result.name);
+			},
+			error:  function(XMLHttpRequest, textStatus, errorThrown){
+                alert( "无法连接服务器，请检查网络！");
+                ajax_result=false;                    
+             },
+		});
+		//alert("123")
+       /*var url= "http://localhost:8080/java-learn-webServices_CXF_springRestful/services/HelloWS/5";     
+	  window.location.href=url;*/
+	
+	
+	
+});
+</script>
+<title>测试</title>
+</head>
+<body>
+	<div id="myDiv">111
+	</div>
+</body>
+</html>

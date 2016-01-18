@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:core="http://cxf.apache.org/core"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+		
+	<import resource="classpath*:META-INF/cxf/cxf.xml" />
+    <import resource="classpath*:META-INF/cxf/cxf-servlet.xml" />
+
+    <bean id="helloWSImpl" class="org.github.mervyn.webServices_CXF_springRestful.HelloWSImpl" />
+    
+     <bean id="jacksonObjectMapper"
+        class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean"></bean>
+ 
+    <bean id="jacksonProvider"
+        class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider">
+        <property name="mapper" ref="jacksonObjectMapper" />
+    </bean>
+   
+	<jaxrs:server id="iHelloWS" address="/">
+		<jaxrs:serviceBeans>
+			<ref bean="helloWSImpl"/>
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+            <entry key="json" value="application/json" />
+            <entry key="xml" value="application/xml" />
+        </jaxrs:extensionMappings>
+        <jaxrs:providers>
+            <ref bean="jacksonProvider"/>
+	        <bean class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter">
+	            <property name="allowOrigins" value="http://localhost:8081"/>
+	        </bean>
+        </jaxrs:providers>
+       <jaxrs:languageMappings>  
+            <entry key="cn" value="cn-ZH"/>
+        </jaxrs:languageMappings> 
+	</jaxrs:server>
+	
+	
+</beans>
