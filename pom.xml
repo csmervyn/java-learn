@@ -63,5 +63,9 @@
     <module>java-learn-webServices_CXF_springRestful</module>
     <module>java-learn-webServices_CXF_springRestfulClient</module>
     <module>java-learn-webSocket</module>
+    <module>java-learn-nio</module>
+    <module>java-learn-multithreaded</module>
+    <module>java-learn-gui</module>
+    <module>java-learn-dom4j</module>
   </modules>
 </project>
