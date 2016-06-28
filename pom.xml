@@ -67,8 +67,6 @@
     <module>java-learn-multithreaded</module>
     <module>java-learn-gui</module>
     <module>java-learn-dom4j</module>
-    <module>DynamicProxy</module>
     <module>java-learn-dynamicProxy</module>
-    <module>java-leran-dynamicProxy</module>
   </modules>
 </project>
