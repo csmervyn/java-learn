@@ -68,5 +68,6 @@
     <module>java-learn-gui</module>
     <module>java-learn-dom4j</module>
     <module>java-learn-dynamicProxy</module>
+    <module>java-learn-dynamicProxy1</module>
   </modules>
 </project>
